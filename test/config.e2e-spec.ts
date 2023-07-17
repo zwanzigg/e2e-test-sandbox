@@ -9,7 +9,7 @@ describe('ConfigController (e2e)', () => {
   let productionHost: string;
   let configService: ConfigService;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
       providers: [ConfigService]
@@ -32,4 +32,7 @@ describe('ConfigController (e2e)', () => {
       .expect(productionHost);
   });
 
+  afterAll(async () => {
+    await app.close();
+  });
 });

@@ -7,7 +7,7 @@ import {TransformInterceptor} from "../src/interceptors/transform.interceptor";
 describe('Transformer Interceptor (e2e)', () => {
   let app: INestApplication;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
     }).compile();
